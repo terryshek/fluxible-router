@@ -1,9 +1,13 @@
 {
-  "name": "fluxible-examples",
+  "name": "flux-example-routing",
   "private": true,
   "version": "0.0.0",
-  "description": "Example applications using Fluxible",
+  "description": "Example application",
+  "main": "server.js",
   "author": "Michael Ridgway <mridgway@yahoo-inc.com>",
+  "scripts": {
+    "dev": "grunt --gruntfile ../Gruntfile.js --taskName fluxible-router"
+  },
   "dependencies": {
     "babel": "^4.6.3",
     "body-parser": "^1.6.4",
@@ -34,4 +38,5 @@
     "webpack": "^1.4.12",
     "webpack-dev-server": "^1.6.5"
   }
+
 }

@@ -2,7 +2,7 @@ var webpack = require('webpack');
 
 module.exports = function (grunt) {
     grunt.initConfig({
-        clean: ['.//build'],
+        clean: ['./' + grunt.option('taskName') + '/build'],
         concurrent: {
             dev: ['nodemon:dev', 'webpack:dev'],
             options: {
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         },
         nodemon: {
             dev: {
-                script: './server.js',
+                script: './' + grunt.option('taskName') + '/server.js',
                 options: {
                     ignore: ['build/**'],
                     ext: 'js,jsx'
@@ -38,9 +38,9 @@ module.exports = function (grunt) {
                 resolve: {
                     extensions: ['', '.js', '.jsx']
                 },
-                entry: './client.js',
+                entry: './' + grunt.option('taskName') + '/client.js',
                 output: {
-                    path: './build/js',
+                    path: './' + grunt.option('taskName') + '/build/js',
                     filename: 'client.js'
                 },
                 module: {
